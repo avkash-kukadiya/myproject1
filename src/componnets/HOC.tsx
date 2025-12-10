@@ -61,10 +61,16 @@ export const HOC = <P extends object>(Component: React.ComponentType<P>) => {
                                     <HiOutlineGift  className="me-6 sideic " /> Pricing
                                 </li>
                             </NavLink>
+
+                            <NavLink to='/todo'>
+                                <li className=" flex  items-center  ">
+                                    <HiOutlineGift  className="me-6 sideic " /> To-Do List
+                                </li>
+                            </NavLink>
                         </ul>
                     </div>
                     <div className="main  w-[83%] ms-auto">
-                        <header className=" header mt-0 z-20 border-2 border-cyan-500  fixed flex bg-white  justify-between">
+                        <header className=" header mt-0 z-20   fixed flex bg-white  justify-between">
                             <div className="nav flex justify-content-around item items-center grow">
                                 <div className=" headmenu text-2xl px-8">
                                     <RxHamburgerMenu />

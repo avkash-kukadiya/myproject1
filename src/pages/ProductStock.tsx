@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { HOC } from '../componnets/HOC'
 import { FiEdit2, FiTrash2, FiSearch } from "react-icons/fi";
-
+import img23 from '../assets/img/applew2.png';
 interface ProductType {
   id: number;
   image: string;
@@ -15,7 +15,7 @@ interface ProductType {
 const products: ProductType[] = [
   {
     id: 1,
-    image: "/img/watch.png",
+    image: img23,
     name: "Apple Watch Series 4",
     category: "Digital Product",
     price: "$690.00",
@@ -24,7 +24,7 @@ const products: ProductType[] = [
   },
   {
     id: 2,
-    image: "/img/headset.png",
+    image: img23,
     name: "Microsoft Headsquare",
     category: "Digital Product",
     price: "$190.00",
@@ -33,7 +33,7 @@ const products: ProductType[] = [
   },
   {
     id: 3,
-    image: "/img/dress.png",
+    image: img23,
     name: "Women's Dress",
     category: "Fashion",
     price: "$640.00",

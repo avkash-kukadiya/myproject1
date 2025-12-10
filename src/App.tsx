@@ -12,6 +12,8 @@ import Favorites from './pages/Favorites'
 import Inbox from './pages/Inbox'
 import Pricing from './pages/Pricing'
 import ProductStock from './pages/ProductStock'
+import ToDo from './pages/ToDo'
+// import ToDo from './pages/ToDo'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -27,6 +29,7 @@ function App() {
                <Route path='/inbox' element={ <Inbox/>} />
                <Route path='/productStock' element={ <ProductStock/>} />
                <Route path='/pricing' element={ <Pricing/>} />
+               <Route path='/todo' element={ <ToDo/>} />
                {/* <Route path='/' element={ <Navigate  to={"/login"}  />} /> */}
                <Route path='/login' element={ <Login/>} />
                <Route path='/ragistration' element={ <Ragistration/>} />

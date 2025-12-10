@@ -69,7 +69,7 @@ border: none;
 }
 /* =========hoc========= */
 .Sidebar{
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 17% !important;
   /* position: fixed; */
 }
@@ -146,11 +146,11 @@ border: none;
   /* max-width:1121px; */
   justify-content:space-between;
   width: inherit;
- 
+  
 }
 .main{
   width: 83%;
-  border: 1px solid green;
+  /* border: 1px solid green; */
   margin:  0 0 0 auto ;
 }
 .hoc{
@@ -193,3 +193,20 @@ border: none;
   height: 100%;
   z-index: 0;
 } */
+
+/* =================sidebar-email============ */
+.tabs{
+  border: 1px solid red
+}
+.tabs .tab{
+  /* border : 1px solid green; */
+  /* padding:; */
+  text-align: center;
+}
+.tabs .tab a{
+  padding:12px 0 ;
+  border : 1px solid rgb(0, 87, 128);
+  display: inline-block;
+  width: 100%;
+  text-align: center !important;
+}
