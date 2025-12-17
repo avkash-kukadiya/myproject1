@@ -13,6 +13,7 @@ import Inbox from './pages/Inbox'
 import Pricing from './pages/Pricing'
 import ProductStock from './pages/ProductStock'
 import ToDo from './pages/ToDo'
+import Contact from './pages/Contact'
 // import ToDo from './pages/ToDo'
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
                <Route path='/productStock' element={ <ProductStock/>} />
                <Route path='/pricing' element={ <Pricing/>} />
                <Route path='/todo' element={ <ToDo/>} />
+               <Route path='/contact' element={ <Contact/>} />
                {/* <Route path='/' element={ <Navigate  to={"/login"}  />} /> */}
                <Route path='/login' element={ <Login/>} />
                <Route path='/ragistration' element={ <Ragistration/>} />

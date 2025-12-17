@@ -11,9 +11,10 @@ import flag from '../assets/img/Flag.png'
 import bellicon from '../assets/img/icon.png'
 import { FaAngleDown } from "react-icons/fa";
 import more from '../assets/img/More.png'
-import { IoMdChatboxes } from "react-icons/io";
+import { IoMdChatboxes, IoMdContacts } from "react-icons/io";
 import { HiOutlineGift } from "react-icons/hi";
 import { LiaDatabaseSolid } from "react-icons/lia";
+import { RiTodoLine } from "react-icons/ri";
 // import { RiCompass2Line } from "react-icons/ri";
 // import { BiBadge } from "react-icons/bi";
 
@@ -64,7 +65,13 @@ export const HOC = <P extends object>(Component: React.ComponentType<P>) => {
 
                             <NavLink to='/todo'>
                                 <li className=" flex  items-center  ">
-                                    <HiOutlineGift  className="me-6 sideic " /> To-Do List
+                                    <RiTodoLine   className="me-6 sideic " /> To-Do List
+                                </li>
+                            </NavLink>
+
+                             <NavLink to='/contact'>
+                                <li className=" flex  items-center  ">
+                                    <IoMdContacts   className="me-6 sideic " /> Contact
                                 </li>
                             </NavLink>
                         </ul>
