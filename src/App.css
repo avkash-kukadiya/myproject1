@@ -210,3 +210,9 @@ border: none;
   width: 100%;
   text-align: center !important;
 }
+
+/* ======producstock =========*/
+.inpSearch :focus{
+  outline: none;
+  box-shadow: none;
+}
