@@ -65,7 +65,7 @@ const Contact:React.FC = () => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-
+   
   // Image upload
   const handleImage = (e: any) => {
     const file = e.target.files[0];

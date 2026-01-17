@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { HOC } from '../componnets/HOC'
 import w2img from '../assets/img/applew2.png'
-import { AiOutlineHeart } from "react-icons/ai";
+// import { AiOutlineHeart } from "react-icons/ai";
 import { FaStar, FaRegStarHalfStroke } from "react-icons/fa6";
+import FavoriteHeart from '../componnets/FavoriteHeart';
+import { toggleFav } from '../redux/slices/productSlice';
+import { useAppDispatch, useAppSelctor } from '../redux/store';
+// import { json } from 'stream/consumers';
 
 interface Product {
   id: number;
@@ -11,6 +15,7 @@ interface Product {
   reviews: number;
   rating: number;
   image: string;
+  fav:boolean;
 }
 
 const products1: Product[] = [
@@ -21,6 +26,7 @@ const products1: Product[] = [
     reviews: 131,
     rating: 4.5,
     image: w2img,
+    fav:false,
   },
   {
     id: 2,
@@ -29,6 +35,7 @@ const products1: Product[] = [
     reviews: 64,
     rating: 4.5,
     image: w2img,
+    fav:false,
   },
   {
     id: 3,
@@ -37,6 +44,7 @@ const products1: Product[] = [
     reviews: 63,
     rating: 4.5,
     image: w2img,
+    fav:false,
   },
   {
     id: 4,
@@ -45,6 +53,7 @@ const products1: Product[] = [
     reviews: 42,
     rating: 4.5,
     image: w2img,
+    fav:false,
   },
   {
     id: 5,
@@ -53,6 +62,7 @@ const products1: Product[] = [
     reviews: 70,
     rating: 4.5,
     image: w2img,
+    fav:false,
   },
   {
     id: 6,
@@ -61,24 +71,36 @@ const products1: Product[] = [
     reviews: 110,
     rating: 4.5,
     image: w2img,
+    fav:false
   },
 ];
-interface favoritesProps {}
-const Favorites:React.FC<favoritesProps> = () => {
+interface favoritesProps { }
+const Favorites: React.FC<favoritesProps> = () => {
+   const dispatch = useAppDispatch();
+    const state = useAppSelctor(state => state.product);
+  const [Data,setData] = useState<Product[]>([]);
+  useEffect(() => {
+    localStorage.setItem('product', JSON.stringify(products1));
+     
+     setData(JSON.parse(localStorage.getItem('product')||"[]")) 
+    
+    console.log("Component mounted");
+  }, []);
   return (
     <div className='w-full p-5 md:p-10 bg-[#F2F3F7]'>
       <h1 className="text-2xl font-semibold mb-6">Favorites</h1>
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
 
-       {products1.map((item) => (
+        {state.product?.filter(item => item.fav === true).map((item) => (
           <div
             key={item.id}
             className="bg-white rounded-xl shadow  p-4 hover:shadow-lg transition relative"
           >
             {/* FAVORITE HEART BUTTON */}
-            <button className="absolute right-4 top-73 bg-white p-2 rounded-full shadow hover:bg-gray-200">
-              <AiOutlineHeart className="text-pink-500 text-lg" />
-            </button>
+            <div className="absolute right-4 top-73 bg-white p-2 rounded-full shadow hover:bg-gray-200">
+              <FavoriteHeart fav={item.fav} onClick={() => dispatch(toggleFav(item.id))} />
+              {/* <AiOutlineHeart className="text-pink-500 text-lg" /> */}
+            </div>
 
             {/* IMAGE + SIDE ARROWS */}
             <div className="relative w-full flex items-center justify-center">
